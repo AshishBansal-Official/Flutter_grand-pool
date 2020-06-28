@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grand_pool/screens/home/home_page/folding_cell_maker.dart';
+import 'package:grand_pool/screens/home/tabs/subtabs/apps_tab.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -88,23 +88,7 @@ class _HomePageState extends State<HomePage>
                         child: TabBarView(
                           controller: _tabController,
                           children: <Widget>[
-                            ListView(
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Container(
-                                    height: height / 6,
-                                    color: Colors.red,
-                                    child: ListView(
-                                      scrollDirection: Axis.horizontal,
-                                      children: <Widget>[
-                                        FoldingCellMaker(),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
+                            AppsTab(),
                             Container(
                               child: Center(
                                 child: Text('Page 2'),

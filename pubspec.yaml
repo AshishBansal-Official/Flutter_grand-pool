@@ -26,7 +26,7 @@ dependencies:
   google_nav_bar: ^2.2.0
   line_icons: ^0.2.0
   sliver_fab: ^1.0.0
-  folding_cell: ^1.0.0
+  url_launcher: ^5.4.11
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -51,11 +51,11 @@ flutter:
   assets:
     - images/
     - images/login/
-    - images/apps/entertainment/
-    - images/apps/fitness/
-    - images/apps/games/
-    - images/apps/news/
-    - images/apps/shopping/
+    - images/apps/Entertainment/
+    - images/apps/Health & Fitness/
+    - images/apps/Games/
+    - images/apps/News & Magazines/
+    - images/apps/Shopping/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
