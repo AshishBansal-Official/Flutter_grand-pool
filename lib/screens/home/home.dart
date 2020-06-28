@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:grand_pool/screens/home/tabs/chats_page.dart';
 import 'package:grand_pool/screens/home/tabs/posts_page.dart';
 import 'package:grand_pool/screens/home/tabs/profile_page.dart';
 import 'package:line_icons/line_icons.dart';
@@ -51,9 +52,7 @@ class _HomeState extends State<Home> {
             });
           },
           children: <Widget>[
-            Center(
-              child: Text('Chats'),
-            ),
+            ChatsPage(),
             Center(
               child: Text('Home'),
             ),
