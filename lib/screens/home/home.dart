@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:grand_pool/screens/home/tabs/chats_page.dart';
+import 'package:grand_pool/screens/home/tabs/home_page.dart';
 import 'package:grand_pool/screens/home/tabs/posts_page.dart';
 import 'package:grand_pool/screens/home/tabs/profile_page.dart';
 import 'package:line_icons/line_icons.dart';
@@ -38,6 +39,12 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    _pageController.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
@@ -53,9 +60,7 @@ class _HomeState extends State<Home> {
           },
           children: <Widget>[
             ChatsPage(),
-            Center(
-              child: Text('Home'),
-            ),
+            HomePage(),
             PostsScreen(),
             ProfilePage(),
           ],
@@ -90,7 +95,6 @@ class _HomeState extends State<Home> {
                     iconSize: 24,
                     padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
                     icon: icons[index],
-                    // textStyle: t.textStyle,
                     text: titles[index],
                   );
                 }).toList(),
@@ -100,7 +104,7 @@ class _HomeState extends State<Home> {
                   setState(() {
                     selectedIndex = index;
                   });
-                  _pageController.jumpToPage(index);
+                  _pageController.animateToPage(index, duration: Duration(milliseconds: 400), curve: Curves.easeInOut);
                 }),
           ),
         ),

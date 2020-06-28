@@ -32,8 +32,9 @@ class CustomTile extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                leading ?? Container(),
+                Expanded(flex: 1, child: leading ?? Container()),
                 Expanded(
+                  flex: 5,
                   child: Container(
                     margin: EdgeInsets.only(left: 10),
                     padding: EdgeInsets.symmetric(vertical: 10),

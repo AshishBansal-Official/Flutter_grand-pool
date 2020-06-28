@@ -148,7 +148,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                       borderSide: BorderSide.none,
                                     ),
-                                    color: Color(0xff47d476),
+                                    color: Colors.blue,
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 8.0,
@@ -166,7 +166,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                       borderSide: BorderSide.none,
                                     ),
-                                    color: Colors.pinkAccent,
+                                    color: Colors.lightBlue,
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 8.0,
