@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:grand_pool/screens/home/tabs/profile_page.dart';
 import 'package:line_icons/line_icons.dart';
 
 class Home extends StatefulWidget {
@@ -12,7 +13,7 @@ class _HomeState extends State<Home> {
 
   PageController _pageController;
 
-  final List<String> titles = ['Chats', 'Home', 'Blog', 'Profile'];
+  final List<String> titles = ['Chats', 'Home', 'Posts', 'Profile'];
 
   final List<IconData> icons = [
     Icons.chat_bubble_outline,
@@ -37,39 +38,30 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       extendBody: true,
-      appBar: AppBar(
-        brightness: Brightness.dark,
-        title: Text(
-          'GoogleNavBar',
-          style: TextStyle(color: Colors.black),
+      body: SafeArea(
+        child: PageView(
+          physics: BouncingScrollPhysics(),
+          controller: _pageController,
+          onPageChanged: (page) {
+            setState(() {
+              selectedIndex = page;
+            });
+          },
+          children: <Widget>[
+            Center(
+              child: Text('Chats'),
+            ),
+            Center(
+              child: Text('Home'),
+            ),
+            Center(
+              child: Text('Posts'),
+            ),
+            ProfilePage(),
+          ],
         ),
-        centerTitle: true,
-        elevation: 0.0,
-        backgroundColor: Colors.white,
-      ),
-      body: PageView(
-        physics: BouncingScrollPhysics(),
-        controller: _pageController,
-        onPageChanged: (page) {
-          setState(() {
-            selectedIndex = page;
-          });
-        },
-        children: <Widget>[
-          Center(
-            child: Text('Chats'),
-          ),
-          Center(
-            child: Text('Home'),
-          ),
-          Center(
-            child: Text('Blog'),
-          ),
-          Center(
-            child: Text('Profile'),
-          ),
-        ],
       ),
       bottomNavigationBar: SafeArea(
         child: Container(

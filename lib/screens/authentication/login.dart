@@ -70,7 +70,7 @@ class Login extends StatelessWidget {
                 'Having trouble?',
                 style: TextStyle(
                   color: Colors.black45,
-                  fontSize: 16.0,
+                  fontSize: 14.0,
                 ),
               ),
             ],
