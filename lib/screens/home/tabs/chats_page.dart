@@ -29,7 +29,7 @@ class _ChatsPageState extends State<ChatsPage> {
                   color: Colors.white,
                 ),
               ),
-              color: Colors.lightBlue,
+              color: Colors.deepPurple.withOpacity(0.8),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(6.0),
               ),

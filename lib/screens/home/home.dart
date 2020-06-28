@@ -12,30 +12,30 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int selectedIndex = 1;
+  int selectedIndex = 2;
 
   PageController _pageController;
 
-  final List<String> titles = ['Chats', 'Home', 'Posts', 'Profile'];
-
-  final List<IconData> icons = [
-    Icons.chat_bubble_outline,
-    LineIcons.home,
-    LineIcons.edit,
-    Icons.person_outline,
+  final List<String> titles = [
+    'Favorites',
+    'Posts',
+    'Home',
+    'Chats',
+    'Profile'
   ];
 
-  final List<Color> colors = [
-    Colors.lightBlue,
-    Colors.teal,
-    Colors.purple,
-    Colors.pink,
+  final List<IconData> icons = [
+    LineIcons.heart,
+    LineIcons.edit,
+    LineIcons.home,
+    Icons.chat_bubble_outline,
+    Icons.person_outline,
   ];
 
   @override
   void initState() {
     super.initState();
-    _pageController = PageController(initialPage: 1);
+    _pageController = PageController(initialPage: 2);
   }
 
   @override
@@ -46,67 +46,83 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomPadding: false,
-      extendBody: true,
-      body: SafeArea(
-        child: PageView(
-          physics: BouncingScrollPhysics(),
-          controller: _pageController,
-          onPageChanged: (page) {
-            setState(() {
-              selectedIndex = page;
-            });
-          },
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        resizeToAvoidBottomPadding: false,
+        extendBody: true,
+        body: Stack(
           children: <Widget>[
-            ChatsPage(),
-            HomePage(),
-            PostsScreen(),
-            ProfilePage(),
-          ],
-        ),
-      ),
-      bottomNavigationBar: SafeArea(
-        child: Container(
-          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(100)),
-            boxShadow: [
-              BoxShadow(
-                  spreadRadius: -10,
-                  blurRadius: 60,
-                  color: Colors.black.withOpacity(.20),
-                  offset: Offset(0, 15))
-            ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 5),
-            child: GNav(
-                tabs: titles.map((title) {
-                  var index = titles.indexOf(title);
-                  var color = colors[index];
-                  return GButton(
-                    gap: 10,
-                    iconActiveColor: color,
-                    iconColor: Colors.black,
-                    textColor: color,
-                    backgroundColor: color.withOpacity(.2),
-                    iconSize: 24,
-                    padding: EdgeInsets.symmetric(horizontal: 18, vertical: 5),
-                    icon: icons[index],
-                    text: titles[index],
-                  );
-                }).toList(),
-                selectedIndex: selectedIndex,
-                onTabChange: (index) {
-                  print(index);
+            SafeArea(
+              child: PageView(
+                physics: BouncingScrollPhysics(),
+                controller: _pageController,
+                onPageChanged: (page) {
                   setState(() {
-                    selectedIndex = index;
+                    selectedIndex = page;
                   });
-                  _pageController.animateToPage(index, duration: Duration(milliseconds: 400), curve: Curves.easeInOut);
-                }),
-          ),
+                },
+                children: <Widget>[
+                  Center(
+                    child: Text('Like'),
+                  ),
+                  PostsScreen(),
+                  HomePage(),
+                  ChatsPage(),
+                  ProfilePage(),
+                ],
+              ),
+            ),
+            Positioned(
+              bottom: 8.0,
+              left: 3.0,
+              right: 3.0,
+              child: Container(
+                width: MediaQuery.of(context).size.width - 20,
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(100)),
+                  boxShadow: [
+                    BoxShadow(
+                        spreadRadius: -10,
+                        blurRadius: 60,
+                        color: Colors.black.withOpacity(.20),
+                        offset: Offset(0, 15))
+                  ],
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10.0),
+                  child: GNav(
+                      tabs: titles.map((title) {
+                        var index = titles.indexOf(title);
+                        return GButton(
+                          gap: 3,
+                          iconActiveColor: Colors.deepPurple,
+                          iconColor: Colors.deepPurple,
+                          textColor: Colors.deepPurple,
+                          backgroundColor: Colors.deepPurple.withOpacity(.2),
+                          iconSize: 24,
+                          padding:
+                              EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                          icon: icons[index],
+                          text: titles[index],
+                        );
+                      }).toList(),
+                      selectedIndex: selectedIndex,
+                      onTabChange: (index) {
+                        print(index);
+                        setState(() {
+                          selectedIndex = index;
+                        });
+                        _pageController.animateToPage(index,
+                            duration: Duration(milliseconds: 400),
+                            curve: Curves.easeInOut);
+                      }),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

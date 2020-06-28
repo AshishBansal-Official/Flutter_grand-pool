@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grand_pool/components/avatar.dart';
 import 'package:grand_pool/components/custom_tile.dart';
 
 class PostTile extends StatelessWidget {
@@ -19,6 +20,7 @@ class PostTile extends StatelessWidget {
     return InkWell(
       onTap: onTap ?? () {},
       child: CustomTile(
+        
         leading: Padding(
           padding: const EdgeInsets.all(4.0),
           child: CircleAvatar(
@@ -27,9 +29,7 @@ class PostTile extends StatelessWidget {
             child: ClipOval(
               child: imageUrl != null
                   ? Image.network(imageUrl)
-                  : Image.asset(
-                      'images/profile_pic.png',
-                    ),
+                  : Avatar(),
             ),
           ),
         ),

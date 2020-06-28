@@ -15,13 +15,35 @@ class _PostsScreenState extends State<PostsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: posts.length,
-      itemBuilder: (context, index) {
-        return PostTile(
-          post: posts[index],
-        );
-      },
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        title: Material(
+          color: Colors.grey.shade200,
+          borderRadius: BorderRadius.circular(10.0),
+          child: Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: TextFormField(
+              decoration: InputDecoration(
+                hintText: 'Add your post...',
+                border: InputBorder.none,
+              ),
+            ),
+          ),
+        ),
+        actions: <Widget>[
+          Icon(Icons.add, color: Colors.deepPurple,),
+          SizedBox(width: 15.0,)
+        ],
+      ),
+      body: ListView.builder(
+        itemCount: posts.length,
+        itemBuilder: (context, index) {
+          return PostTile(
+            post: posts[index],
+          );
+        },
+      ),
     );
   }
 }

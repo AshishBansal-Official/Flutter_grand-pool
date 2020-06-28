@@ -1,3 +1,4 @@
+import 'package:grand_pool/components/avatar.dart';
 import 'package:grand_pool/components/profile_option_card.dart';
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
@@ -13,15 +14,9 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     return Builder(
       builder: (context) => SliverFab(
-        floatingWidget: CircleAvatar(
-          minRadius: 50.0,
+        floatingWidget: Avatar(
           maxRadius: 60.0,
-          backgroundColor: Color(0xFFFAFAFA),
-          child: ClipOval(
-            child: Image.asset(
-              'images/profile_pic.png',
-            ),
-          ),
+          iconSize: 60.0,
         ),
         floatingPosition: FloatingPosition(
           top: -90.0,
@@ -95,6 +90,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                           //TODO: Change the gender icon
                                           LineIcons.mars,
                                           size: 16.0,
+                                          color: Colors.deepPurple,
                                         ),
                                         SizedBox(
                                           width: 4.0,
@@ -148,7 +144,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                       borderSide: BorderSide.none,
                                     ),
-                                    color: Colors.blue,
+                                    color: Colors.deepPurple[500],
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 8.0,
@@ -166,7 +162,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                       borderRadius: BorderRadius.circular(20.0),
                                       borderSide: BorderSide.none,
                                     ),
-                                    color: Colors.lightBlue,
+                                    color: Colors.deepPurple[500],
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 8.0,
@@ -200,14 +196,14 @@ class _ProfilePageState extends State<ProfilePage> {
                       ProfileOptionCard(
                         leading: Icon(
                           Icons.share,
-                          color: Colors.blueGrey[400],
+                          color: Colors.deepPurple[400],
                         ),
                         title: 'Share App',
                       ),
                       ProfileOptionCard(
                         leading: Icon(
                           Icons.help,
-                          color: Colors.blueGrey[400],
+                          color: Colors.deepPurple[400],
                         ),
                         title: 'Help',
                       ),

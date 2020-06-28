@@ -34,54 +34,97 @@ class _HomePageState extends State<HomePage>
     width = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-        centerTitle: true,
-        bottom: TabBar(
-          controller: _tabController,
-          tabs: <Widget>[
-            Tab(
-              text: 'Apps',
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            pinned: true,
+            backgroundColor: Colors.deepPurple,
+            title: Text(
+              'Home',
+              style: TextStyle(color: Colors.white),
             ),
-            Tab(
-              text: 'Youtube',
+            actions: <Widget>[
+              Icon(
+                Icons.more_vert,
+                color: Colors.white,
+              ),
+              SizedBox(
+                width: 10.0,
+              ),
+            ],
+            bottom: TabBar(
+              indicatorColor: Colors.white,
+              controller: _tabController,
+              tabs: <Widget>[
+                Tab(
+                  child: Text(
+                    'Apps',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Youtube',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Other Sources',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
             ),
-            Tab(
-              text: 'Other Sources',
-            ),
-          ],
-        ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: <Widget>[
-          ListView(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  height: height/6,
-                  color: Colors.red,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                Container(
+                  child: Column(
                     children: <Widget>[
-                      FoldingCellMaker(),
+                      Container(
+                        height: MediaQuery.of(context).size.height,
+                        child: TabBarView(
+                          controller: _tabController,
+                          children: <Widget>[
+                            ListView(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.all(10.0),
+                                  child: Container(
+                                    height: height / 6,
+                                    color: Colors.red,
+                                    child: ListView(
+                                      scrollDirection: Axis.horizontal,
+                                      children: <Widget>[
+                                        FoldingCellMaker(),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Container(
+                              child: Center(
+                                child: Text('Page 2'),
+                              ),
+                            ),
+                            Container(
+                              child: Center(
+                                child: Text('Page 3'),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
-              ),
-            ],
-          ),
-          Container(
-            child: Center(
-              child: Text('Page 2'),
+              ],
             ),
           ),
-          Container(
-            child: Center(
-              child: Text('Page 3'),
-            ),
-          ),
+          SliverFillRemaining(),
         ],
       ),
     );
