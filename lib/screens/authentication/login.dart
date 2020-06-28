@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grand_pool/screens/home/home.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -28,6 +29,8 @@ class Login extends StatelessWidget {
                   padding: EdgeInsets.all(0.0),
                   onPressed: () {
                     //TODO: Make the login happen
+                    Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (_) => Home()));
                   },
                   elevation: 2.0,
                   height: 42.0,
