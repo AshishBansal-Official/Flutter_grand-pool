@@ -69,7 +69,7 @@ class _StartNewChatScreenState extends State<StartNewChatScreen> {
               child: ListView.builder(
                 padding: EdgeInsets.all(10.0),
                 itemCount: chats.length,
-                reverse: false,
+                reverse: true,
                 controller: _listScrollController,
                 itemBuilder: (context, index) {
                   return chatMessageItem(chats[index]);
@@ -126,7 +126,8 @@ class _StartNewChatScreenState extends State<StartNewChatScreen> {
 
     sendMessage() {
       setState(() {
-        chats.add(
+        chats.insert(
+          0,
           Chat(
             chat: textFieldController.text,
           ),

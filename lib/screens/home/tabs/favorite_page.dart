@@ -14,16 +14,8 @@ class _FavoritePageState extends State<FavoritePage> {
       body: ListView.builder(
         itemCount: posts.length,
         itemBuilder: (context, index) {
-          onTap() {
-            print(index);
-            setState(() {
-              posts[index].isFavorite = !posts[index].isFavorite;
-            });
-          }
-
           if (posts[index].isFavorite == true) {
             return PostTile(
-              onTap: onTap(),
               post: posts[index].post,
               isFavorite: posts[index].isFavorite,
             );
