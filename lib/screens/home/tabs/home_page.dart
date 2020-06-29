@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:grand_pool/screens/authentication/login.dart';
 import 'package:grand_pool/screens/home/tabs/subtabs/apps_tab.dart';
+import 'package:grand_pool/screens/home/tabs/subtabs/links_tab.dart';
+import 'package:grand_pool/screens/home/tabs/subtabs/youtube_tab.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,14 +42,40 @@ class _HomePageState extends State<HomePage>
           SliverAppBar(
             pinned: true,
             backgroundColor: Colors.deepPurple,
+            automaticallyImplyLeading: false,
             title: Text(
-              'Home',
+              'Grand Pool',
               style: TextStyle(color: Colors.white),
             ),
             actions: <Widget>[
-              Icon(
-                Icons.more_vert,
-                color: Colors.white,
+              PopupMenuButton(
+                onSelected: (e) => print('PopUpMenuButtonSelected'),
+                itemBuilder: (context) => [
+                  PopupMenuItem(
+                    child: InkWell(
+                      child: Text(
+                        'Settings',
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ),
+                  ),
+                  PopupMenuItem(
+                    child: InkWell(
+                      onTap: () {
+                        print('Tapped');
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (_) => Login()));
+                      },
+                      child: Text(
+                        'Logout',
+                      ),
+                    ),
+                  ),
+                ],
+                child: Icon(
+                  Icons.more_vert,
+                  color: Colors.white,
+                ),
               ),
               SizedBox(
                 width: 10.0,
@@ -59,19 +88,19 @@ class _HomePageState extends State<HomePage>
                 Tab(
                   child: Text(
                     'Apps',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 18.0),
                   ),
                 ),
                 Tab(
                   child: Text(
                     'Youtube',
-                    style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white, fontSize: 18.0),
                   ),
                 ),
                 Tab(
                   child: Text(
-                    'Other Sources',
-                    style: TextStyle(color: Colors.white),
+                    'Websites',
+                    style: TextStyle(color: Colors.white, fontSize: 18.0),
                   ),
                 ),
               ],
@@ -89,16 +118,8 @@ class _HomePageState extends State<HomePage>
                           controller: _tabController,
                           children: <Widget>[
                             AppsTab(),
-                            Container(
-                              child: Center(
-                                child: Text('Page 2'),
-                              ),
-                            ),
-                            Container(
-                              child: Center(
-                                child: Text('Page 3'),
-                              ),
-                            ),
+                            YoutubeTab(),
+                            LinksTab(),
                           ],
                         ),
                       ),
@@ -108,7 +129,6 @@ class _HomePageState extends State<HomePage>
               ],
             ),
           ),
-          SliverFillRemaining(),
         ],
       ),
     );

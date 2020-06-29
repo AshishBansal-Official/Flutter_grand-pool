@@ -24,9 +24,9 @@ class HorizontalListBuilder extends StatelessWidget {
         itemCount: list.length,
         itemBuilder: (context, index) {
           return HorizontalListCard(
-            image: 'images/$type/$category/${list[index].appUrl}',
-            text: list[index].appName,
-            url: list[index].appPlayStoreUrl,
+            image: 'images/$type/$category/${list[index].imageUrl}',
+            text: list[index].name,
+            url: list[index].networkLink,
           );
         },
       ),

@@ -227,7 +227,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                       SizedBox(
-                        height: 10.0,
+                        height: 70.0,
                       ),
                     ],
                   ),

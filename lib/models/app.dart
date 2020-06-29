@@ -1,11 +1,11 @@
 class App {
-  String appName;
-  String appUrl;
-  String appPlayStoreUrl;
+  String name;
+  String imageUrl;
+  String networkLink;
 
   App({
-    this.appName,
-    this.appUrl,
-    this.appPlayStoreUrl,
+    this.name,
+    this.imageUrl,
+    this.networkLink,
   });
 }

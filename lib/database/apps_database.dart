@@ -2,103 +2,103 @@ import 'package:grand_pool/models/app.dart';
 
 final fitnessApps = [
   App(
-    appName: 'Google Fit',
-    appUrl: 'google_fit.png',
-    appPlayStoreUrl:
+    name: 'Google Fit',
+    imageUrl: 'google_fit.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.google.android.apps.fitness&hl=en_IN',
   ),
   App(
-    appName: 'Health Mate',
-    appUrl: 'health_mate.png',
-    appPlayStoreUrl:
+    name: 'Health Mate',
+    imageUrl: 'health_mate.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.withings.wiscale2&hl=en_IN',
   ),
 ];
 
 final entertainmentApps = [
   App(
-    appName: 'Netflix',
-    appUrl: 'netflix.jpg',
-    appPlayStoreUrl:
+    name: 'Netflix',
+    imageUrl: 'netflix.jpg',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.netflix.mediaclient&hl=en_IN',
   ),
   App(
-    appName: 'Amazon Prime Video',
-    appUrl: 'amazon_prime_video.jpg',
-    appPlayStoreUrl:
+    name: 'Amazon Prime Video',
+    imageUrl: 'amazon_prime_video.jpg',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.amazon.avod.thirdpartyclient&hl=en_IN',
   ),
   App(
-    appName: 'IMDb',
-    appUrl: 'imdb.jpg',
-    appPlayStoreUrl:
+    name: 'IMDb',
+    imageUrl: 'imdb.jpg',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.imdb.mobile&hl=en_IN',
   ),
 ];
 
 final gameApps = [
   App(
-    appName: 'Pubg',
-    appUrl: 'pubg.jpg',
-    appPlayStoreUrl:
+    name: 'Pubg',
+    imageUrl: 'pubg.jpg',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.tencent.ig&utm_source=PlayStoreSales.com&utm_medium=Web&utm_campaign=App+Sale',
   ),
   App(
-    appName: 'Candy Crush Soda Saga',
-    appUrl: 'candy_crush.png',
-    appPlayStoreUrl:
+    name: 'Candy Crush Soda Saga',
+    imageUrl: 'candy_crush.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.king.candycrushsodasaga',
   ),
   App(
-    appName: 'Temple Run 2',
-    appUrl: 'temple_run.png',
-    appPlayStoreUrl:
+    name: 'Temple Run 2',
+    imageUrl: 'temple_run.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.imangi.templerun2',
   ),
   App(
-    appName: 'Ludo King',
-    appUrl: 'ludo_king.png',
-    appPlayStoreUrl:
+    name: 'Ludo King',
+    imageUrl: 'ludo_king.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.ludo.king',
   ),
 ];
 final newsApps = [
   App(
-    appName: 'Daily Hunt',
-    appUrl: 'daily_hunt.png',
-    appPlayStoreUrl: 'https://play.google.com/store/apps/details?id=com.eterno',
+    name: 'Daily Hunt',
+    imageUrl: 'daily_hunt.png',
+    networkLink: 'https://play.google.com/store/apps/details?id=com.eterno',
   ),
   App(
-    appName: 'Google News',
-    appUrl: 'google_news.png',
-    appPlayStoreUrl:
+    name: 'Google News',
+    imageUrl: 'google_news.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.google.android.apps.magazines',
   ),
 ];
 
 final shoppingApps = [
   App(
-    appName: 'Alibaba',
-    appUrl: 'alibaba.png',
-    appPlayStoreUrl:
+    name: 'Alibaba',
+    imageUrl: 'alibaba.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.alibaba.intl.android.apps.poseidon',
   ),
   App(
-    appName: 'Amazon',
-    appUrl: 'amazon.png',
-    appPlayStoreUrl:
+    name: 'Amazon',
+    imageUrl: 'amazon.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=in.amazon.mShop.android.shopping',
   ),
   App(
-    appName: 'eBay',
-    appUrl: 'ebay.png',
-    appPlayStoreUrl:
+    name: 'eBay',
+    imageUrl: 'ebay.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.ebay.mobile',
   ),
   App(
-    appName: 'Flipkart',
-    appUrl: 'flipkart.png',
-    appPlayStoreUrl:
+    name: 'Flipkart',
+    imageUrl: 'flipkart.png',
+    networkLink:
         'https://play.google.com/store/apps/details?id=com.flipkart.android',
   ),
 ];
