@@ -18,7 +18,7 @@ class Login extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 24.0,
-                  color: Colors.black54,
+                  color: Colors.black87,
                   fontWeight: FontWeight.bold,
                 ),
               ),

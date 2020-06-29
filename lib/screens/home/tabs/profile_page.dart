@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sliver_fab/sliver_fab.dart';
 
+import '../friends_list_screen.dart';
+
 class ProfilePage extends StatefulWidget {
   @override
   _ProfilePageState createState() => _ProfilePageState();
@@ -148,32 +150,21 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: Padding(
                                       padding: const EdgeInsets.symmetric(
                                         vertical: 8.0,
-                                        horizontal: 30.0,
+                                        horizontal: 25.0,
                                       ),
                                       child: Text(
-                                        'Followers',
+                                        'View Friends',
                                         style: TextStyle(color: Colors.white),
                                       ),
                                     ),
-                                    onPressed: () {},
-                                  ),
-                                  FlatButton(
-                                    shape: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      borderSide: BorderSide.none,
-                                    ),
-                                    color: Colors.deepPurple[500],
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                        vertical: 8.0,
-                                        horizontal: 30.0,
-                                      ),
-                                      child: Text(
-                                        'Following',
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                    ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context, 
+                                        MaterialPageRoute(
+                                          builder: (_) => FriendsListScreen(),
+                                        ),
+                                      );
+                                    },
                                   ),
                                 ],
                               ),
